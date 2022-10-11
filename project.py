@@ -72,8 +72,11 @@ def adding_resource():
     res = input("1-Water 2-Milk 3-Coffee\nWhich resource do you want?: ")
     if res == "1":
         ml = int(input("How much mililiter water do you add?:"))
-        resources["water"] += ml
-        print("Adding process is succesful.")
+        if ml < 500:
+            resources["water"] += ml
+            print("Adding process is succesful.")
+        else:
+            print("Please add less than 500 mililiter")
     elif res == "2":
         ml = int(input("How much milileter milk do you add?:"))
         resources["milk"] += ml
